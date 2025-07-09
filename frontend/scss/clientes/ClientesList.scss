@@ -1,0 +1,194 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.clientes-container {
+    min-height: 100vh;
+    background: $main-bg-gradient;
+    padding: 2rem;
+
+    h1 {
+        color: $primary-color;
+        margin-bottom: 1rem;
+    }
+
+    .filters {
+        @include card;
+        margin-bottom: $spacing-xl;
+        padding: $spacing-lg;
+
+        .search-box {
+            display: flex;
+            gap: $spacing-md;
+
+            input {
+                @include input;
+                flex: 1;
+                max-width: 300px;
+                border-radius: 8px;
+                border: 1px solid $secondary-color;
+                padding: 0.5rem 1rem;
+                background: #fff;
+                color: $primary-dark;
+                font-size: 1rem;
+
+                &:focus {
+                    outline: none;
+                    border-color: $primary-color;
+                }
+            }
+        }
+    }
+
+    .loading {
+        @include flex-center;
+        min-height: 200px;
+        color: $text-color;
+    }
+
+    .error {
+        color: $error-color;
+        background-color: $error-light;
+        border: 1px solid $error-color;
+        padding: $spacing-md;
+        border-radius: $border-radius;
+        margin-bottom: $spacing-md;
+    }
+
+    .clientes-list {
+        @include card;
+        overflow-x: auto;
+        width: 100%;
+
+        table {
+            width: 100%;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(37,99,235,0.08);
+            border-collapse: separate;
+            border-spacing: 0;
+            overflow: hidden;
+
+            th, td {
+                padding: 0.75rem 1rem;
+                text-align: left;
+                border-bottom: 1px solid $secondary-color;
+                color: $primary-dark;
+            }
+
+            th {
+                background: $primary-light;
+                color: $primary-color;
+                font-weight: 600;
+                cursor: pointer;
+                user-select: none;
+            }
+
+            tr {
+                transition: all 0.2s ease;
+
+                &:hover {
+                    background: $primary-light;
+                }
+            }
+
+            .btn-view {
+                background: $primary-color;
+                color: #fff;
+                border: none;
+                border-radius: 8px;
+                padding: 0.5rem 1.2rem;
+                font-size: 1rem;
+                font-weight: 500;
+                box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+                transition: background 0.2s;
+                cursor: pointer;
+
+                &:hover {
+                    background: $primary-hover;
+                }
+            }
+        }
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        width: 100%;
+
+        .btn-page {
+            background: $primary-color;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.5rem 1.2rem;
+            font-size: 1rem;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+            transition: background 0.2s;
+            cursor: pointer;
+
+            &:hover {
+                background: $primary-hover;
+            }
+
+            &:disabled {
+                background: $primary-light;
+                color: #aaa;
+                cursor: not-allowed;
+            }
+        }
+
+        .page-info {
+            color: $text-color;
+            font-weight: 500;
+        }
+    }
+}
+
+.btn-view {
+    background: $primary-color;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+    transition: background 0.2s;
+    cursor: pointer;
+    &:hover {
+        background: $primary-hover;
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.btn-page {
+    background: $primary-color;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+    transition: background 0.2s;
+    cursor: pointer;
+    &:hover {
+        background: $primary-hover;
+    }
+    &:disabled {
+        background: $primary-light;
+        color: #aaa;
+        cursor: not-allowed;
+    }
+} 

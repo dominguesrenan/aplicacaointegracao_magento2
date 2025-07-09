@@ -1,0 +1,192 @@
+@use 'sass:color';
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.dashboard {
+    &-container {
+        min-height: 100vh;
+        background: $main-bg-gradient;
+        padding: 2rem;
+    }
+
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+        h1 {
+            font-size: 2.2rem;
+            color: $primary-color;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            background: none;
+        }
+        .logout-button {
+            background: $primary-color;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.5rem 1.2rem;
+            font-size: 1rem;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(110,193,228,0.10);
+            transition: background 0.2s;
+            cursor: pointer;
+            &:hover {
+                background: $primary-hover;
+            }
+        }
+    }
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: $spacing-xl;
+        margin-bottom: $spacing-xl;
+
+        @include mobile {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &-card {
+        @include card;
+        transition: $transition-base;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: $shadow-md;
+        }
+
+        &__header {
+            @include flex-between;
+            margin-bottom: $spacing-lg;
+            padding-bottom: $spacing-sm;
+            border-bottom: $border-width solid $border-color;
+
+            h2 {
+                @include heading-3;
+                color: $text-color;
+            }
+        }
+
+        &__content {
+            flex: 1;
+        }
+
+        &__footer {
+            margin-top: $spacing-md;
+            padding-top: $spacing-md;
+            border-top: $border-width solid $border-color;
+        }
+    }
+
+    &-stats {
+        @include flex-center;
+        flex-direction: column;
+        text-align: center;
+        padding: $spacing-lg;
+
+        &__value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: $primary-color;
+            margin-bottom: $spacing-sm;
+        }
+
+        &__label {
+            color: $text-light;
+            font-size: 0.9rem;
+        }
+    }
+
+    &-chart {
+        @include card;
+        margin-bottom: $spacing-xl;
+
+        &__header {
+            @include flex-between;
+            margin-bottom: $spacing-lg;
+        }
+
+        &__title {
+            @include heading-3;
+            color: $text-color;
+        }
+    }
+
+    &-table {
+        @include card;
+        overflow-x: auto;
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+
+            th, td {
+                padding: $spacing-md;
+                text-align: left;
+                border-bottom: $border-width solid $border-color;
+            }
+
+            th {
+                font-weight: 600;
+                color: $text-color;
+                background-color: $bg-light;
+            }
+
+            td {
+                color: $text-light;
+            }
+
+            tr:hover {
+                background-color: $bg-light;
+            }
+        }
+    }
+
+    &-error {
+        color: $error-color;
+        background-color: $error-light;
+        border: 1px solid $error-color;
+        padding: $spacing-md;
+        border-radius: $border-radius;
+        margin-bottom: $spacing-md;
+    }
+
+    &-loading {
+        @include flex-center;
+        min-height: 200px;
+    }
+}
+
+.welcome-section, .info-section {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(37,99,235,0.08);
+    padding: 2rem 2.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid $secondary-color;
+    color: $primary-dark;
+}
+
+.welcome-section h2 {
+    color: $primary-color;
+    margin: 0;
+}
+
+.info-section h3 {
+    color: $primary-color;
+    margin-bottom: 0.5rem;
+}
+
+.info-section p {
+    margin: $spacing-xs 0;
+    word-break: break-all;
+} 

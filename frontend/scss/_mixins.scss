@@ -1,0 +1,221 @@
+@use 'variables' as *;
+
+// Mixins para responsividade
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == sm {
+        @media (min-width: $breakpoint-sm) { @content; }
+    } @else if $breakpoint == md {
+        @media (min-width: $breakpoint-md) { @content; }
+    } @else if $breakpoint == lg {
+        @media (min-width: $breakpoint-lg) { @content; }
+    } @else if $breakpoint == xl {
+        @media (min-width: $breakpoint-xl) { @content; }
+    }
+}
+
+// Mixin para flexbox
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+}
+
+// Mixin para botões
+@mixin button($bg-color: $primary-color, $hover-color: $primary-hover) {
+    padding: $spacing-sm $spacing-lg;
+    background-color: $bg-color;
+    color: white;
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: background-color $transition-speed $transition-timing;
+
+    &:hover:not(:disabled) {
+        background-color: $hover-color;
+    }
+
+    &:disabled {
+        background-color: $border-color;
+        cursor: not-allowed;
+    }
+}
+
+// Mixin para inputs
+@mixin input {
+    padding: $spacing-sm $spacing-md;
+    border: $border-width solid $border-color;
+    border-radius: $border-radius;
+    font-size: 14px;
+    transition: border-color $transition-speed $transition-timing;
+
+    &:focus {
+        outline: none;
+        border-color: $primary-color;
+    }
+}
+
+// Mixin para cards
+@mixin card {
+    background: white;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    padding: $spacing-lg;
+}
+
+// Mixin para transições
+@mixin transition($property: all) {
+    transition: $property $transition-speed $transition-timing;
+}
+
+// Mixins de Layout
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@mixin flex-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Mixins de Responsividade
+@mixin mobile {
+  @media (max-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+// Mixins de Elementos
+@mixin card {
+  background: $white;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-sm;
+  padding: $spacing-lg;
+}
+
+@mixin button {
+  padding: $spacing-md $spacing-lg;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: all $transition-speed $transition-timing;
+  font-weight: 500;
+}
+
+@mixin input {
+  width: 100%;
+  padding: $spacing-md;
+  border: $border-width solid $border-color;
+  border-radius: $border-radius;
+  transition: border-color $transition-speed $transition-timing;
+
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+  }
+}
+
+// Mixins de Animações
+@mixin fade-in {
+  animation: fadeIn $transition-speed $transition-timing;
+}
+
+@mixin slide-in {
+  animation: slideIn $transition-speed $transition-timing;
+}
+
+// Mixins de Tipografia
+@mixin heading-1 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+@mixin heading-2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+@mixin heading-3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+// Mixins de Utilitários
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $bg-light;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $border-color;
+    border-radius: $border-radius;
+  }
+}
+
+// Animações
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+} 
