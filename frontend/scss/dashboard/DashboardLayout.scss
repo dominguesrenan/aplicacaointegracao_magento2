@@ -1,0 +1,70 @@
+@use '../_variables' as *;
+
+.dashboard {
+    padding: $spacing-lg;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: $spacing-lg;
+        background: linear-gradient(45deg, $primary-color, $secondary-color);
+        padding: $spacing-md $spacing-lg;
+        border-radius: $border-radius-lg;
+        color: $white;
+        box-shadow: $shadow-md;
+
+        h2 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+    }
+
+    &-content {
+        background: $white;
+        border-radius: $border-radius-md;
+        padding: $spacing-lg;
+        box-shadow: $shadow-sm;
+    }
+}
+
+.welcome-section {
+    margin-bottom: $spacing-lg;
+
+    h2 {
+        color: $primary-color;
+        margin-bottom: $spacing-sm;
+    }
+}
+
+.info-section {
+    background: #f5f5f5;
+    padding: $spacing-sm;
+    border-radius: $border-radius-sm;
+
+    h3 {
+        color: $primary-color;
+        margin-bottom: $spacing-sm;
+    }
+
+    p {
+        margin: $spacing-xs 0;
+        word-break: break-all;
+    }
+}
+
+/* Responsividade */
+@media (max-width: $breakpoint-md) {
+    .dashboard {
+        padding: $spacing-sm;
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        text-align: center;
+        gap: $spacing-sm;
+    }
+} 

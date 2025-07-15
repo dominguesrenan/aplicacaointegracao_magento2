@@ -1,0 +1,313 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $main-bg-gradient;
+    padding: $spacing-xl;
+}
+
+.login-form {
+    background: $white;
+    padding: $spacing-xl $spacing-lg;
+    border-radius: $border-radius-xl;
+    box-shadow: $shadow-lg;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid $border-color;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: $shadow-lg;
+    }
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+
+    h2 {
+        color: $text-color;
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 0 0 $spacing-md;
+    }
+
+    .subtitle {
+        color: $text-light;
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+}
+
+.form-group {
+    margin-bottom: $spacing-lg;
+
+    label {
+        display: block;
+        margin-bottom: $spacing-sm;
+        color: $text-color;
+        font-weight: 500;
+    }
+
+    input {
+        width: 100%;
+        padding: $spacing-md $spacing-lg;
+        border: 1px solid $border-color;
+        border-radius: $border-radius-md;
+        background: $bg-light;
+        font-size: 1rem;
+        color: $text-color;
+        transition: all 0.2s ease;
+
+        &:focus {
+            border-color: $primary-color;
+            box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.1);
+            outline: none;
+        }
+
+        &::placeholder {
+            color: $text-light;
+        }
+    }
+}
+
+.form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+
+    button {
+        width: 100%;
+        padding: $spacing-md $spacing-lg;
+        background: $primary-color;
+        color: $white;
+        border: none;
+        border-radius: $border-radius-md;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: $spacing-sm;
+
+        &:hover {
+            background: $primary-hover;
+            transform: translateY(-1px);
+        }
+
+        &:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+    }
+
+    .forgot-password {
+        text-align: center;
+        color: $primary-color;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: $primary-hover;
+        }
+    }
+}
+
+.login-card {
+    background: $white;
+    border-radius: $border-radius-lg;
+    padding: $spacing-xl;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: $shadow-md;
+
+    &__header {
+        text-align: center;
+        margin-bottom: $spacing-xl;
+
+        h1 {
+            color: $primary-color;
+            margin-bottom: $spacing-sm;
+        }
+
+        p {
+            color: $text-light;
+        }
+    }
+
+    .form-group {
+        margin-bottom: $spacing-lg;
+
+        label {
+            display: block;
+            margin-bottom: $spacing-xs;
+            color: $text-color;
+        }
+
+        input {
+            width: 100%;
+            padding: $spacing-md;
+            border: $border-width solid $border-color;
+            border-radius: $border-radius;
+            transition: $transition-base;
+
+            &:focus {
+                outline: none;
+                border-color: $primary-color;
+            }
+
+            &.error {
+                border-color: $error-color;
+                background-color: $error-light;
+            }
+        }
+    }
+
+    .btn {
+        width: 100%;
+        padding: $spacing-md;
+        background-color: $primary-color;
+        color: $white;
+        border: none;
+        border-radius: $border-radius;
+        cursor: pointer;
+        transition: $transition-base;
+
+        &:hover {
+            background-color: $primary-hover;
+        }
+
+        &:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+    }
+
+    .error-message {
+        color: $error-color;
+        background-color: $error-light;
+        border: 1px solid $error-color;
+        padding: $spacing-sm;
+        border-radius: $border-radius;
+        margin-top: $spacing-sm;
+        font-size: 0.9rem;
+    }
+}
+
+.form-group {
+    margin-bottom: $spacing-md;
+
+    label {
+        display: block;
+        margin-bottom: $spacing-xs;
+        color: $primary-color;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    i {
+        position: absolute;
+        left: $spacing-sm;
+        color: $primary-color;
+        font-size: 1rem;
+    }
+}
+
+input {
+    width: 100%;
+    padding: $spacing-sm $spacing-sm $spacing-sm 2.8rem;
+    border: 2px solid rgba($primary-color, 0.1);
+    border-radius: $border-radius-lg;
+    font-size: 1rem;
+    transition: $transition-base;
+    background: $white;
+
+    &:focus {
+        outline: none;
+        border-color: $primary-color;
+        box-shadow: 0 0 0 4px rgba($primary-color, 0.1);
+    }
+
+    &::placeholder {
+        color: $text-light;
+    }
+}
+
+button {
+    width: 100%;
+    padding: $spacing-sm;
+    background: linear-gradient(45deg, $primary-color, $secondary-color);
+    color: $white;
+    border: none;
+    border-radius: $border-radius-lg;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: $transition-base;
+    position: relative;
+    overflow: hidden;
+
+    &:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: $shadow-md;
+    }
+
+    &:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba($white, 0.3);
+    border-radius: 50%;
+    border-top-color: $white;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.error-message {
+    background: $error-light;
+    color: $error-color;
+    padding: $spacing-sm;
+    border-radius: $border-radius-lg;
+    margin-bottom: $spacing-md;
+    font-size: 0.9rem;
+    border: 1px solid rgba($error-color, 0.2);
+    text-align: center;
+}
+
+@media (max-width: $breakpoint-sm) {
+    .login-form {
+        padding: $spacing-lg;
+        margin: $spacing-sm;
+        max-height: calc(100vh - 2rem);
+        overflow-y: auto;
+    }
+
+    .login-header h2 {
+        font-size: 1.5rem;
+    }
+} 

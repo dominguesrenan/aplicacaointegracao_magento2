@@ -1,0 +1,78 @@
+// Cores modernas e claras
+$primary-color: #0ea5e9; // Azul claro
+$primary-hover: #0284c7;
+$primary-light: #bfdbfe;
+$primary-dark: #075985;
+$secondary-color: #93c5fd;
+$text-color: #111827;
+$text-light: #4b5563;
+$border-color: #e5e7eb;
+$error-color: #ef4444;
+$error-light: #fee2e2;
+$error-dark: #dc2626;
+$error-bg: $error-light;
+$success-color: #10b981;
+$success-light: #dcfce7;
+$success-dark: #059669;
+$warning-color: #f97316;
+$warning-light: #fef3c7;
+$warning-dark: #d97706;
+$info-color: #3b82f6;
+$info-light: #bfdbfe;
+$info-dark: #1d4ed8;
+$bg-light: #f3f4f6;
+$white: #fff;
+$sidebar-bg-gradient: linear-gradient(135deg, #f3f4f6 0%, #ffffff 100%);
+$main-bg-gradient: linear-gradient(135deg, #ffffff 0%, #f3f4f6 100%);
+$text-on-dark: #111827;
+
+// Espaçamento
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 12px;
+$spacing-lg: 16px;
+$spacing-xl: 24px;
+
+// Larguras
+$sidebar-width: 280px;
+$sidebar-collapsed-width: 80px;
+
+// Bordas
+$border-radius: 4px;
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-xl: 20px;
+$border-width: 1px;
+
+// Sombras
+$box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 6px 20px rgba(0, 0, 0, 0.2);
+$shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.2);
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Container
+$container-max-width: 1200px;
+$container-padding: $spacing-xl;
+
+// Transições
+$transition-speed: 0.3s;
+$transition-timing: ease;
+$transition-base: all $transition-speed $transition-timing;
+$transition-fast: all 0.15s $transition-timing;
+$transition-slow: all 0.5s $transition-timing;
+
+// Z-index
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal-backdrop: 1040;
+$z-index-modal: 1050;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070; 
