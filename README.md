@@ -48,7 +48,7 @@ Exemplo:
 ```javascript
 proxy: {
     '/rest': {
-        target: 'https://sua-url-magento.com.br',
+        target: 'https://seu-magento.com.br',
         changeOrigin: true,
         secure: false,
         pathRewrite: { '^/rest': '/rest' },
